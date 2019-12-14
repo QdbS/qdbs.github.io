@@ -1,1 +1,24 @@
-Hello World
+<html>
+<head>
+
+<title>QdbS</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+function pageOnLoad() {
+	$.getJSON("https://api.github.com/repos/qdbs/qdbs/releases/latest", doGetVersion);
+}
+
+function doGetVersion(data) {
+	var divVersion = document.getElementById("versionstring");
+
+	divVersion.innerHTML = data.name;
+}
+</script>
+
+</head>
+<body onload="pageOnLoad()">
+Current Version: <div id="versionstring">&nbsp;</div>
+</body>
+</html>
