@@ -1,24 +1,83 @@
+
 <html>
-<head>
+  <head>
+    <title>QdbS - Quote database System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function pageOnLoad() {
+			$.getJSON("https://api.github.com/repos/qdbs/qdbs/releases/latest", doGetVersion);
+		}
 
-<title>QdbS</title>
+		function doGetVersion(data) {
+			var divVersion = document.getElementById("versionstring");
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-function pageOnLoad() {
-	$.getJSON("https://api.github.com/repos/qdbs/qdbs/releases/latest", doGetVersion);
-}
-
-function doGetVersion(data) {
-	var divVersion = document.getElementById("versionstring");
-
-	divVersion.innerHTML = data.name;
-}
-</script>
-
-</head>
-<body onload="pageOnLoad()">
-Current Version: <div id="versionstring">&nbsp;</div>
-</body>
+			divVersion.innerHTML = data.name;
+		}
+	</script>
+  </head>
+  <body onload="pageOnLoad()">
+    <center>
+      <table width="80%" cellpadding="10" cellspacing="10">
+        <tr>
+          <td class="heading" align="left">
+            <a href="./">QdbS</a>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" valign="top">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <td width="100%">
+                <table width="100%" cellpadding="3" cellspacing="0">
+                  <tr>
+                    <td class="border" align="center">
+					  <a href="https://github.com/QdbS/qdbs/blob/master/Changelog.txt"><b>changes</b></a> /
+                      <a href="https://github.com/QdbS/qdbs/releases"><b>downloads</b></a> /
+					  <a href="https://github.com/QdbS/qdbs/issues"><b>bugs</b></a> /
+                      <a href="https://github.com/QdbS/qdbs"><b>github</b></a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </table>
+            <table width="100%" cellpadding="5" cellspacing="5">
+              <tr>
+                <td width="100%" align="center" class="small">
+                  <div>
+					Home of QdbS - Quote database System
+					<br /><br />
+					Quotes Database System (formerly Salty Quotes Database, named so because it was made for the development site saltine.net) is a small script written by <a title="My Website" href="http://kflorence.com/" rel="external">Kyle Florence</a> a few years ago that will store IRC quotes, it's like your own personal <a title="Bash Quotes" href="http://bash.org/" target="_blank">bash.org</a>. QdbS could originally be found at <a href="http://archive.kflorence.com/projects/qdbs/" target="_blank">http://archive.kflorence.com/projects/qdbs/</a> and at the least, will be maintained here on QdbS.org including bug fixes and feature additions.
+					<br /><br />
+					You will be able to find the latest version in the downloads section of this site.
+					<br /><br />
+					Support is available via the forum, and on IRC ( <a href="irc://irc.qdbs.org/qdbs">irc.qdbs.org</a> in <a href="irc://irc.qdbs.org/qdbs">#qdbs</a> or <a href="chat/">Chat</a> )
+					<br /><br />
+					Suggestions and feature requests can also be posted on the forum in the apropriate board.
+					<br /><br />
+					QdbS is released under the <a title="GNU GPL" href="http://www.gnu.org/licenses/" target="_blank">GNU General Public License</a>
+				</div>
+                </td>
+              </tr>
+            </table>
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <td width="100%">
+                <table class="border" width="100%" cellpadding="3" cellspacing="0">
+                  <tr>
+                    <td align="left" valign="bottom">Current Version: <span id="versionstring">&nbsp;</span></td>
+                    <td align="right" valign="bottom"><a href="#top">Top</a>.</td>
+                  </tr>
+                </table>
+              </td>
+            </table>
+	      </td>
+        </tr>
+        <tr>
+          <td class="salty" align="center">
+            <a href="http://www.qdbs.org/">QdbS</a> is Copyright &copy; 2007 - 2020 <a href="http://www.qdbs.org/">QdbS.org</a> and <a href="http://kflorence.com/" target="_blank">Kyle Florence</a><br />
+			<a href="http://www.qdbs.org/">QdbS.org</a> is Copyright &copy; 2007 - 2020 M Beeching
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
 </html>
